@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.31704260651629074" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="229.0">
+         <children>
+            <Label layoutX="50.0" layoutY="110.0" text="IP:" />
+            <Label layoutX="50.0" layoutY="220.0" text="Puerto:" />
+            <Label layoutX="50.0" layoutY="330.0" text="NIckname:" />
+            <Button fx:id="conectarB" layoutX="89.0" layoutY="450.0" mnemonicParsing="false" onAction="#conectar" text="Conectar">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TextField fx:id="ip" layoutX="74.0" layoutY="105.0" onAction="#conectar" />
+            <TextField fx:id="puerto" layoutX="105.0" layoutY="215.0" onAction="#conectar" prefHeight="26.0" prefWidth="141.0" />
+            <TextField fx:id="nickname" layoutX="124.0" layoutY="325.0" onAction="#conectar" prefHeight="26.0" prefWidth="103.0" />
+            <Button fx:id="desconectarB" layoutX="76.0" layoutY="513.0" mnemonicParsing="false" onAction="#desconectar" text="Desconectar">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <SplitPane dividerPositions="0.738255033557047" layoutX="1.0" layoutY="2.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="556.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="536.0">
+                     <children>
+                        <Label fx:id="cuerpoChat" layoutX="-1.0" layoutY="2.0" prefHeight="436.0" prefWidth="541.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="148.0" prefWidth="534.0">
+                     <children>
+                        <TextField fx:id="mensaje" layoutX="190.0" layoutY="12.0" onAction="#enviarMensaje" prefHeight="129.0" prefWidth="344.0" />
+                        <Button fx:id="enviar" layoutX="46.0" layoutY="62.0" mnemonicParsing="false" onAction="#enviarMensaje" text="Enviar">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
