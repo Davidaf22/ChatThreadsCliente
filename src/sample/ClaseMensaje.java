@@ -5,6 +5,8 @@ public class ClaseMensaje {
     public String nickname;
     public String mensaje;
 
+    public ClaseMensaje(){}
+
     public ClaseMensaje(String nickname, String mensaje){
         this.mensaje=mensaje;
         this.nickname=nickname;
