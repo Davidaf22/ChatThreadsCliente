@@ -33,6 +33,7 @@ public class Controller {
     @FXML
     void conectar(javafx.event.ActionEvent event) throws IOException {
 
+        System.out.println("Entre metodo Controller");
         String ipS = ip.getText();
         String puertoS = puerto.getText();
         int puertoI = Integer.parseInt(puertoS);

@@ -14,13 +14,15 @@ public class ConexionHilo {
         Socket clienteSocket = new Socket();
         InetSocketAddress addr = new InetSocketAddress(ip, puerto);
         clienteSocket.connect(addr);
-
+        System.out.println("Entre metodo clase ConexionHilo");
         return clienteSocket;
     }
 
     public static void enviarMensaje(Socket clienteSocket,ClaseMensaje mensaje) throws IOException {
 
-        ObjectOutputStream oos = (ObjectOutputStream) clienteSocket.getOutputStream();
+        ObjectOutputStream oos = null;
+            oos = new ObjectOutputStream(clienteSocket.getOutputStream());
+
         oos.writeObject(mensaje);
 
         System.out.println("Mensaje enviado");
