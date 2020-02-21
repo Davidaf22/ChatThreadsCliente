@@ -2,6 +2,7 @@ package sample;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -19,17 +20,10 @@ public class ConexionHilo {
 
     public static void enviarMensaje(Socket clienteSocket,ClaseMensaje mensaje) throws IOException {
 
+        ObjectOutputStream oos = (ObjectOutputStream) clienteSocket.getOutputStream();
+        oos.writeObject(mensaje);
 
-        InputStream is = clienteSocket.getInputStream();
-        OutputStream os= clienteSocket.getOutputStream();
-        String operacion="";
-        operacion = operacion+",";
-        os.write(operacion.getBytes());
-
-        byte[] resultado = new byte[25];
-        is.read(resultado);
-
-        String resul = new String(resultado);
+        System.out.println("Mensaje enviado");
     }
 
     public static void cerrarSocket(Socket clienteSocket) throws IOException {
